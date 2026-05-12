@@ -1,0 +1,13 @@
+loaders:
+  - modules:
+      - haystack_integrations.components.tools.olostep.tool
+    search_path: [../src]
+processors:
+  - type: filter
+    documented_only: true
+    skip_empty_modules: true
+renderer:
+  description: Olostep integration for Haystack
+  id: integrations-olostep
+  filename: olostep.md
+  title: Olostep

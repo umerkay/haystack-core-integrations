@@ -42,6 +42,7 @@ on:
       - "Test / mongodb_atlas"
       - "Test / nvidia"
       - "Test / ollama"
+      - "Test / olostep"
       - "Test / openrouter"
       - "Test / opensearch"
       - "Test / optimum"

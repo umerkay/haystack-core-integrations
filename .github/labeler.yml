@@ -213,6 +213,11 @@ integration:ollama:
       - any-glob-to-any-file: "integrations/ollama/**/*"
       - any-glob-to-any-file: ".github/workflows/ollama.yml"
 
+integration:olostep:
+  - changed-files:
+      - any-glob-to-any-file: "integrations/olostep/**/*"
+      - any-glob-to-any-file: ".github/workflows/olostep.yml"
+
 integration:openrouter:
   - changed-files:
       - any-glob-to-any-file: "integrations/openrouter/**/*"

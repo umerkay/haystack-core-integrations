@@ -44,8 +44,13 @@ jobs:
     steps:
       - id: set
         run: |
-          echo 'os=${{ github.event_name == 'push' && '["ubuntu-latest"]' || env.TEST_MATRIX_OS }}' >> $GITHUB_OUTPUT
-          echo 'python-version=${{ github.event_name == 'push' && '["3.10"]' || env.TEST_MATRIX_PYTHON }}' >> $GITHUB_OUTPUT
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo 'os=["ubuntu-latest"]' >> "$GITHUB_OUTPUT"
+            echo 'python-version=["3.10"]' >> "$GITHUB_OUTPUT"
+          else
+            echo "os=${TEST_MATRIX_OS}" >> "$GITHUB_OUTPUT"
+            echo "python-version=${TEST_MATRIX_PYTHON}" >> "$GITHUB_OUTPUT"
+          fi
 
   run:
     name: Python ${{ matrix.python-version }} on ${{ startsWith(matrix.os, 'macos-') && 'macOS' || startsWith(matrix.os, 'windows-') && 'Windows' || 'Linux' }}

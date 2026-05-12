@@ -1,6 +1,7 @@
 loaders:
   - modules:
-      - haystack_integrations.components.tools.olostep.tool
+      - olostep_haystack.web_search
+      - olostep_haystack.fetcher
     search_path: [../src]
 processors:
   - type: filter
